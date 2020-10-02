@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const compression = require('compression');
-const connectDB = require('./config/db');
+const connectDB = require('./utils/db');
 const errorHandler = require('./middlewares/errorHandler');
 require('dotenv').config();
 
