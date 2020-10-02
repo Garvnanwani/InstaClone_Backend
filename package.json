@@ -4,7 +4,7 @@
   "description": "backend setup of instaclone",
   "main": "src/server.js",
   "scripts": {
-    "start": "NODE_ENV=production node src/server",
+    "start": "node src/server",
     "dev": "nodemon src/server"
   },
   "keywords": [
