@@ -5,7 +5,7 @@ const protect = async (req, res, next) => {
 
     let token;
 
-    if (req.headers.authorization && req.headers.authorization.startswith("Bearer")) {
+    if (req.headers.authorization && req.headers.authorization.startsWith("Bearer")) {
         token = req.headers.authorization.split(" ")[1];
     }
 
@@ -22,7 +22,7 @@ const protect = async (req, res, next) => {
         const user = await User.findById(decoded.id).select("-password");
 
         if (!user) {
-            return next({ message: `No user found for ID ${decoded.id}` })
+            return next({ message: `No user found for ID ${decoded.id}` });
         }
 
     } catch (err) {

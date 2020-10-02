@@ -17,7 +17,7 @@ const errorHandler = ((err, req, res, next) => {
             err.message = "The username is already taken";
         }
 
-        statusCode = 400;
+        err.statusCode = 400;
     }
 
     if (err.name === "ValidationError") {
@@ -31,13 +31,13 @@ const errorHandler = ((err, req, res, next) => {
             }
         });
 
-        statusCode = 400;
+        err.statusCode = 400;
     }
 
 
     if (err.name === "CastError") {
         err.message = "The ObjectID is malformed";
-        statusCode = 400;
+        err.statusCode = 400;
     }
 
     if (err.name === 'MulterError') {
