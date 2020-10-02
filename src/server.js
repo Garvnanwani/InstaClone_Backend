@@ -1,11 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
-const mongoose = require('mongoose');
 const compression = require('compression');
-const path = require('path');
-const socketio = require('socket.io');
-const jwt = require('jwt-simple');
 const connectDB = require('./config/db');
 require('dotenv').config();
 
@@ -23,7 +19,6 @@ app.use(helmet.hidePoweredBy());
 app.use(cors());
 app.use(express.json());
 app.set('trust proxy', 1);
-// app.use('/api', require('./routes'));
 
 if (process.env.NODE_ENV === 'production') {
     app.use(compression());
@@ -49,6 +44,8 @@ app.use((err, req, res, next) => {
     res.status(err.statusCode).send({
         error: err.statusCode >= 500 ? 'An unexpected error occurred, please try again later.' : err.message,
     })
+
+
 
 })
 
