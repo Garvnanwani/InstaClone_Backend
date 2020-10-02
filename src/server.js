@@ -8,15 +8,13 @@ const auth = require('./routes/auth');
 const post = require('./routes/post');
 const user = require('./routes/user');
 
-
-require('dotenv').config();
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 if (process.env.NODE_ENV === 'development') {
     const morgan = require('morgan');  //middleware for logging
     app.use(morgan('dev'));
+    require('dotenv').config();
 }
 
 
