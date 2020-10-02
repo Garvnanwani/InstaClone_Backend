@@ -5,8 +5,9 @@ const compression = require('compression');
 const connectDB = require('./utils/db');
 const errorHandler = require('./middlewares/errorHandler');
 const auth = require('./routes/auth');
-const user = require('./routes/user');
 const post = require('./routes/post');
+const user = require('./routes/user');
+
 
 require('dotenv').config();
 
@@ -32,8 +33,8 @@ if (process.env.NODE_ENV === 'production') {
 connectDB()
 
 app.use("/api/auth", auth);
-app.use("/api/user", user);
 app.use("/api/post", post);
+app.use("/api/user", user);
 
 app.use(errorHandler);
 

@@ -13,7 +13,7 @@ const {
     searchPost,
 } = require("../controllers/post");
 
-const { protect } = require("../middlewares/auth");
+const protect = require("../middlewares/auth");
 
 router.route("/").get(getPosts).post(protect, addPost);
 router.route("/search").get(searchPost);

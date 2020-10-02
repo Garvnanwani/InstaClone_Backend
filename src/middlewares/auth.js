@@ -28,7 +28,7 @@ const protect = async (req, res, next) => {
     } catch (err) {
         next({
             message: "You need to be logged in to visit this route",
-            statusCode = 403
+            statusCode: 403,
         })
     }
 
