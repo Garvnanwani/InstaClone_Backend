@@ -4,8 +4,8 @@
   "description": "backend setup of instaclone",
   "main": "src/server.js",
   "scripts": {
-    "server": "nodemon src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "NODE_ENV=production node src/server",
+    "dev": "nodemon src/server"
   },
   "keywords": [
     "instaclone",
