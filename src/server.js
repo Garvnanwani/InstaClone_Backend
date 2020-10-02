@@ -4,6 +4,10 @@ const helmet = require('helmet');
 const compression = require('compression');
 const connectDB = require('./utils/db');
 const errorHandler = require('./middlewares/errorHandler');
+const auth = require('./routes/auth');
+const user = require('./routes/user');
+const post = require('./routes/post');
+
 require('dotenv').config();
 
 const app = express();
@@ -26,6 +30,10 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 connectDB()
+
+app.use("/api/auth", auth);
+app.use("/api/user", user);
+app.use("/api/post", post);
 
 app.use(errorHandler);
 
