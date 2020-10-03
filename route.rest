@@ -1,1 +1,18 @@
-GET http://localhost:3000/api/auth
+GET http://localhost:3000/api/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNzgxODc5OWUxNGZhMDAxNzUzNTgzZSIsImlhdCI6MTYwMTcyMDYwOSwiZXhwIjoxNjA0MzEyNjA5fQ.lgikWCtmDdpEPk-B1_EIo7UgP4DB3an0V5A-JaQ0EBY
+
+###
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "garvnanwani88@gmail.com",
+    "password": "garvtest"
+}
+
+###
+GET http://localhost:3000/api/user/5f7818799e14fa001753583e/follow
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNzc1OGE1MDY3YmU1MTY0ODBkNWUyOSIsImlhdCI6MTYwMTcyMTkxNCwiZXhwIjoxNjA0MzEzOTE0fQ.SWqZ_eFfe2pU7cQRNhzFRj46wmR_jf4zxqDmnWdhDQg
+
+###
+GET http://localhost:3000/api/user/search?username=thisisgarv
