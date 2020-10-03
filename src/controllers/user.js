@@ -11,6 +11,7 @@ exports.getUsers = asyncHandler(async (req, res, next) => {
         if (followers.includes(req.user.id)) {
             user.isFollowing = true;
         }
+
     });
 
     users = users.filter((user) => user._id.toString() !== req.user.id);
@@ -183,7 +184,7 @@ exports.searchUser = asyncHandler(async (req, res, next) => {
     }
 
     const regex = new RegExp(req.query.username, "i");
-    const users = await User.find({ username: regex });
+    const users = await User.find({ username: regex }).select("-password");
 
     res.status(200).json({ success: true, data: users });
 });
