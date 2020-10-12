@@ -124,7 +124,7 @@ exports.newPassword = asyncHandler(async (req, res, next) => {
     try {
 
         const saveUser = await user.save(); //when fail its goes to catch
-        res.status(200).json({ success: true });
+        res.status(200).json({ success: true, message: "Changed Password Successfully" });
 
     } catch (err) {
         console.log('err: ' + err);
