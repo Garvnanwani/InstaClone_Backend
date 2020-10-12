@@ -6,7 +6,7 @@ POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
-    "email": "garvnanwani88@gmail.com",
+    "email": "garvnanwani66@gmail.com",
     "password": "garvtest"
 }
 
@@ -16,3 +16,20 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNzc1OGE1M
 
 ###
 GET http://localhost:3000/api/user/search?username=thisisgarv
+
+###
+POST http://localhost:3000/api/auth/reset-password
+Content-Type: application/json
+
+{
+    "email": "garvnanwani66@gmail.com"
+}
+
+###
+POST http://localhost:3000/api/auth/new-password
+Content-Type: application/json
+
+{
+    "password": "garvtest",
+    "token": "a0efa3f441016c3fa59df3611c986271bc91b95d308c15119273ca2246bea231"
+}
