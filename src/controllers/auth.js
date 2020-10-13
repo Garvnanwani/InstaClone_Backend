@@ -89,7 +89,7 @@ exports.resetPassword = asyncHandler(async (req, res, next) => {
 
             const saveUser = await user.save(); //when fail its goes to catch
 
-            sendMail(email, `<p>You requested for password change</p><h5>click on this <a href="https://instagraam.netlify.app/${token}"> link </a> to reset your password</h5>`).then(() => {
+            sendMail(email, `<p>You requested for password change</p><h5>click on this <a href="https://instagraam.netlify.app/reset/${token}"> link </a> to reset your password</h5>`).then(() => {
                 res.json({ message: "check your email for the link" })
             }).catch(err => {
                 console.log(err);
