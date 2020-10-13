@@ -9,7 +9,7 @@ const post = require('./routes/post');
 const user = require('./routes/user');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 if (process.argv.slice(2) == 'development') {
     const morgan = require('morgan');  //middleware for logging
